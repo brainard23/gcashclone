@@ -1,9 +1,11 @@
 import { useNavigation } from "@react-navigation/native";
-import { useLayoutEffect } from "react";
+import { useLayoutEffect, useRef } from "react";
 import { Image, ImageBackground, SafeAreaView, Text, View } from "react-native";
+import PhoneInput from "react-native-phone-number-input";
 
 const Login = () => {
   const navigation = useNavigation();
+  const phoneInput = useRef(PhoneInput);
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -29,7 +31,47 @@ const Login = () => {
           />
         </View>
         <View className="flex justify-center px-6 mt-8 items-center space-x-2">
-          <Text className="text-white font-bold	text-xl">G for greener tomorrow</Text>
+          <Text className="text-white font-bold	text-xl">
+            G for greener tomorrow
+          </Text>
+        </View>
+        <View className="flex justify-center px-6 mt-8 items-center space-x-2">
+          <PhoneInput
+            ref={phoneInput}
+            defaultValue={0}
+            defaultCode="PH"
+            layout="second"
+            containerStyle={{
+              backgroundColor: "#007CFF",
+              borderRadius: 50,
+              color: '#ffff'
+            }}
+            textInputStyle={{
+                color: '#fff', 
+                fontWeight: '600',
+                fontSize: 18   
+            }}
+            codeTextStyle={{
+                color: '#fff', 
+                fontWeight: '600',
+                fontSize: 18   
+            }}
+            textContainerStyle={{
+              backgroundColor: "#007CFF",
+              borderTopRightRadius: 50,              
+              color: '#ffff',
+              borderBottomRightRadius: 50,
+            }}
+            // onChangeText={(text) => {
+            //   setValue(text);
+            // }}
+            // onChangeFormattedText={(text) => {
+            //   setFormattedValue(text);
+            // }}
+            withDarkTheme
+            withShadow
+            autoFocus
+          />
         </View>
       </View>
     </SafeAreaView>
