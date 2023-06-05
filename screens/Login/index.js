@@ -41,25 +41,28 @@ const Login = () => {
             defaultValue={0}
             defaultCode="PH"
             layout="second"
+            textInputProps={{
+              placeholderTextColor: "#ffffff",
+            }}
             containerStyle={{
               backgroundColor: "#007CFF",
               borderRadius: 50,
-              color: '#ffff'
+              color: "#ffff",
             }}
             textInputStyle={{
-                color: '#fff', 
-                fontWeight: '600',
-                fontSize: 18   
+              color: "#fff",
+              fontWeight: "600",
+              fontSize: 18,
             }}
             codeTextStyle={{
-                color: '#fff', 
-                fontWeight: '600',
-                fontSize: 18   
+              color: "#fff",
+              fontWeight: "600",
+              fontSize: 18,
             }}
             textContainerStyle={{
               backgroundColor: "#007CFF",
-              borderTopRightRadius: 50,              
-              color: '#ffff',
+              borderTopRightRadius: 50,
+              color: "#ffff",
               borderBottomRightRadius: 50,
             }}
             // onChangeText={(text) => {
@@ -72,6 +75,9 @@ const Login = () => {
             withShadow
             autoFocus
           />
+        </View>
+        <View className="bg-white w-24 h-24 rounded-xl items-center justify-center mt-52">
+              
         </View>
       </View>
     </SafeAreaView>
